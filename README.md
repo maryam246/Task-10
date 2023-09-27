@@ -46,10 +46,6 @@ A static method can’t access or modify it.
 
 A static method needs no specific parameters.
 # Changing class members:
-There are two ways to change class members in Python:
-## Using the object itself:
-When you change a class member using the object itself, you are only changing the value of that member for that particular object.
-## Using the class name:
 When you change a class member using the class name, you are changing the value of that member for all instances of that class.
 # Constructor in Python:
 In Python the __init__() method is called the constructor and is always called when an object is created.
