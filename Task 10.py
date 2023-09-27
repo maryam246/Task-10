@@ -312,6 +312,38 @@ class food:
 f = food()
 print(food.dish)
 f.repr()
+# Example 6
+class student:
+    grade = 5
+    #constructor creating
+    def __init__(self,name,age):
+        self.name =name
+        self.age =age 
+    
+    def get_info(self):
+        print({"name": self.name, "age": self.age, "grade":self.grade})
+        
+    @classmethod    # Use Class method
+    def update_grade(cls,grade):
+        cls.grade=grade
+        
+  
+    @staticmethod          # Use static method
+    def check_age(age):
+        if age>18:
+            print("Above 18")
+        else:
+            print("Below 18")
+    
+    #object creating
+s1 =student("Amir",17)
+s2 =student("Areeb",22)
+
+student.update_grade(4)
+student.check_age(22) #in static method object is not needed for output
+
+s1.get_info()
+s2.get_info()
 
 # Example Changing class members:
 # Using the class name change the class member
