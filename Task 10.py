@@ -213,3 +213,286 @@ class child_class(laptop):
 c = child_class()
 c.show()
 
+#Polymorphism in Pythton:
+#Example 1
+l = [1,2,34,4]
+print(len(l))
+                 # Same function of len() work with different type.
+s = 'Hello world!'
+print(len(s))
+
+#Example 2
+# overloading in polymorphism
+class A:
+    def dispaly(self,name=" "):
+        print('My name is '+ name)
+
+obj = A()
+obj.dispaly()  # here is not mendetory to pass name its depend
+            # on you if you want then pass. overloading concept.
+obj.dispaly('ali')
+
+#Example 3
+# overriding in polymorphism
+class school:
+    def display_info(self):
+        print("I love my school.")
+class student(school):
+    def display_info(self):
+        super().display_info()
+        print("Ali go to school.")
+s = student()
+s.display_info()      # this is the overriding concept.
+
+# Example 4
+a = 4
+b = 'Kiran'
+print(type(a))
+print(type(b))    # type function behave different.
+
+# Example 5
+class food:
+    def menu(self):
+        print('lazaniya,bryani,kheer')
+c = food()
+c.menu()
+#Example 1
+#Class/Static variable in Python:
+class A:
+    age = 20        # Class variable
+    def __init__(self):
+        self.name = 'Maryam'
+
+    def dispaly(self):
+        print(self.name)
+a = A()
+a.dispaly()
+#Example 2
+#Class methods and Static methods in Python:
+# To access the class variable we used @classmethod.
+class A:
+    age = 20        # Class variable
+    def __init__(self):
+        self.name = 'Mhanoor'
+
+    def dispaly(self):
+        print(self.name)
+    @classmethod     #CLASS METHOD
+    def get_age(cls):
+        cls.age # Accessing class variable inside class method
+
+a = A()
+a.dispaly()
+A.age
+#Example 3
+class Mobile:
+    name = 'Oppo'
+    @classmethod
+    def display(cls):
+        print(cls.name)
+m = Mobile()
+m.display()
+Mobile.display()
+print(Mobile.name)
+
+#EXample 4
+class clg:
+    k =10
+    @classmethod
+    def show(cls):
+        print(cls.k)
+c = clg
+c.show()
+#Example 5
+class food:
+    dish = 'Pulao'    # class variable
+    @classmethod #class method
+    def repr(cls):
+        print(cls.dish) # Accessing class variable
+f = food()
+print(food.dish)
+f.repr()
+
+# Example Changing class members:
+# Using the class name change the class member
+#Example 1
+class Name:
+    name = 'Mujhaid'
+    @classmethod
+    def show(cls):
+        print(cls.name)
+Name.name = 'Saba'
+n = Name()
+n.show()
+
+#Example 2
+class number:
+    num = [1,2,3]
+    @classmethod
+    def display(cls):
+        print(cls.num)
+number.num = [23,45,33,22,11]
+n = number()
+n.display()
+
+#Example 3
+class fun:
+    game = 'hockey'
+    def play(self):
+        print(f'we play {self.game}.')
+fun.game = 'Football'
+f = fun()
+f.play()
+
+# Example 4
+# Change the  method in class
+class Animal:
+    name = 'bella!'
+    @classmethod
+    def cat(cls):
+        print(f'I am a {cls.name}.')
+a = Animal()
+def dog(cls):
+    print('I am a dog')
+Animal.cat = dog
+a.cat()
+
+#Example 5
+class A:
+    age = 45
+    def get_age(self):
+        print(self.age)
+A.age = 33
+a = A()
+a.get_age()
+
+#Constructor in Python:
+#Example 1
+class Constructor:   #when object is crerated then constructor automatically called.
+    n = 22
+    def __init__(self):  #default constructor
+        print(f'The value of n is {self.n}.')
+
+c = Constructor()
+#Example 2
+class check:
+    a = 20
+    b = 3
+    def __init__(self,x):  # parameterized constructor
+        print(f'The value of a is {self.a} and b is {self.b} or value of x is.')
+        print(x)
+c = check(3)
+
+#Distructor in python:
+class Variety_methods:
+    def __init__(self):
+        print('I am a constructor.')
+    def normal(self):
+        print('I am a noraml method.')
+    def __del__(self):
+        print('I am a destructor.')
+        print('Object deleted.')
+obj = Variety_methods()
+obj.normal()
+del obj
+
+# example 2
+class A:
+    def show(self):
+        print('I am a display function.')
+    def __del__(self):
+        print('Object deleted successfully.')
+a = A()
+a.show()
+del a
+
+# Example 3
+class fun:
+    def __init__(self):
+        self.name = 'Kiran'
+    def __del__(self):
+        print('Deleted name successfully...')
+f = fun()
+
+#First class function:
+#Example 1
+def info():
+    print('My name is maryam.')
+
+i = info()
+print(i)
+
+#Example 2
+def Family(x):
+    print(f'Totaly family member is {x}.')
+f = Family(6)
+print(f)
+
+#Metaprogramming with metaclasses:
+#Metaclasses
+#Example 1
+a = 100
+b = 'Amina'
+c = 3.5
+print(type(a))
+print(type(b))
+print(type(c))
+#Example 2
+class Metaclasses:
+    pass
+m = Metaclasses()
+print(type(m))
+
+# Example 3
+def A():
+    pass
+a = A()
+print(type(A))
+
+#Class and instance atribute:
+#Example 1
+class Laptop:
+    # class attribute/variable
+    name = 'Hp'
+    def __init__(self,y):
+        #instance attribute/variable
+        self.y = y
+    def prt(self):
+        print(f'I have {self.y}')
+
+    @classmethod
+    def display(cls):
+        print(cls.name)
+l = Laptop('DELL')
+l.prt()
+l.display()
+
+#Example 2
+class Number:
+    # class attribute/variable
+    num = 70
+    def __init__(self,x):
+        # instance attribute/variable
+        self.x = x
+    def show(self):
+        print(f'My lucky number is {self.x}.')
+    @classmethod
+    def get_num(cls):
+        print(cls.num)
+n = Number(3)
+n.show()
+n.get_num()
+
+#Reflection:
+
+class Myclass:
+    def method_a(self):
+        pass
+    def method_b(self):
+        pass
+m = Myclass()
+print(dir(m))
+# Garbage Collection:
+num = 22
+num = 26
+print(num)
